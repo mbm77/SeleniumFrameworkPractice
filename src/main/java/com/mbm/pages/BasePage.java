@@ -26,4 +26,11 @@ public class BasePage {
 		return element.getText();
 		
 	}
+	
+	protected void click(By by, WaitStrategy waitStrategy, String elementname) {
+		WebElement element = ExplicitWaitFactory.performExplicitWait(by, waitStrategy);
+		element.click();
+		ExtentLogger.pass(elementname+  " is clicked successfully");
+		
+	}
 }

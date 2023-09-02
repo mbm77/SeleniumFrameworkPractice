@@ -24,7 +24,12 @@ public class OrangeHRMTests extends Base {
 	
 	@Test
 	public void logoutTest() {
+		String actualText = new OrangeHRMLoginPage()
+				.enterUsername("Admin")
+				.enterPassword("admin123").clickSubmit()
+				.clickUserDropDown().clickOnLogout().loginPage();
 		
+		Assert.assertTrue(actualText.equalsIgnoreCase("login"));
 	}
 
 }
